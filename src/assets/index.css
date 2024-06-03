@@ -17,11 +17,17 @@
 @layer base {
   *, *::after, *::after {
     scrollbar-width: 0px;
+   
   }
   body {
  background-color: #462009;
   }
   
+}
+html{
+  -ms-overflow-style: none;  
+  scrollbar-width: none;
+ 
 }
 h1{
   font-weight: 800;
