@@ -15,8 +15,8 @@
 }
  
 @layer base {
-  * {
-  
+  *, *::after, *::after {
+    scrollbar-width: 0px;
   }
   body {
  background-color: #462009;
@@ -25,4 +25,7 @@
 }
 h1{
   font-weight: 800;
+}
+.app-container{
+  scrollbar-width: 0px;
 }
