@@ -22,8 +22,8 @@ import IconNext from "@/components/icons/IconNext.vue"
 
     <MoodList :MOOD_TYPES />
     <h3 class="my-5 text-textBlack font-semibold text-sm">What was about it?</h3>
-    <div class="flex flex-wrap gap-2 w-[75%] justify-start">
-      <VButton v-for="catagory in CATEGORIES" :key="catagory.name" padding="1" :bg="catagory.bg">{{
+    <div class="flex flex-wrap gap-2 w-[80%] justify-start">
+      <VButton v-for="catagory in CATEGORIES" :key="catagory.name" canClick=true padding="1" :bg="catagory.bg">{{
         catagory.name
       }}</VButton>
     </div>

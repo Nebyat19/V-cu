@@ -1,5 +1,6 @@
 <template>
   <button 
+     @click ="onClick()"
     :class="[
       'flex gap-5 justify-center items-center   text-sm',
       bgClass,
@@ -14,7 +15,7 @@
 <script setup>
 import { computed } from 'vue';
 import IconNext from '../icons/IconNext.vue';
-import { defineProps } from 'vue';
+import { defineProps, ref } from 'vue';
 
 const props = defineProps({
   bg: {
@@ -29,6 +30,10 @@ const props = defineProps({
     type:Number,
     default:2
 
+  },
+  canClick:{
+type:Boolean,
+default:false
   }
 });
 
@@ -50,8 +55,14 @@ const paddingOption ={
   3: 'px-7 py-3'
 }
 
-const bgClass = computed(() => bgOptions[props.bg] || bgOptions.bgBlack);
+const bgClass = ref(bgOptions[props.bg] || bgOptions.bgBlack)
 const roundedClass = computed(() => roundedOptions[props.rounded] || roundedOptions.roundedFull);
 const paddingCalss = computed(()=>paddingOption[props.padding] || paddingOption[3])
+
+const onClick =()=>{
+if(props.canClick)
+bgClass.value = bgClass.value ==='border border-textLight text-textLight' ? bgOptions.bgBlack : bgOptions.bgOutline
+
+}
 
 </script>
