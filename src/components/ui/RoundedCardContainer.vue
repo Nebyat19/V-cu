@@ -1,5 +1,5 @@
 <template>
-  <div :class="['bg-[#d4f6e9]']" class="px-2 rounded-[15px] py-2">
+  <div :class="['bg-[#d4f6e9]']" class="px-3 rounded-[15px] py-3">
     <slot>
       <div class="flex">
         <span class="flex  flex-col items-center justify-center pr-3   border-r border-gray-400">
