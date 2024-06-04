@@ -2,7 +2,7 @@
   <label
     :for="moodtype.mood"
     @click="handleClick"
-    class="px-7 py-3 cursor-pointer gap-2 rounded-lg flex items-center justify-center flex-col"
+    class="px-7 py-3 cursor-pointer gap-2 shadow-md rounded-lg flex items-center justify-center flex-col"
     :class="[bgColor]"
   >
     <span class="text-3xl">{{ moodtype.emoji }}</span>

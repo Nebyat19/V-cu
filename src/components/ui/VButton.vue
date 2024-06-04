@@ -2,7 +2,7 @@
   <button 
      @click ="onClick()"
     :class="[
-      'flex gap-5 justify-center items-center   text-sm',
+      'flex gap-8 justify-center items-center   text-sm',
       bgClass,
       roundedClass,
       paddingCalss
@@ -39,20 +39,24 @@ default:false
 
 const bgOptions = {
   bgGradient: 'bg-gradient-to-r from-gradientStart via-gradientStart to-gradientEnd text-white',
+  bgGradient2:'bg-gradient-to-r from-gradientStart via-gradientEnd to-gradientEnd text-white',
   bgBlack: 'bg-textBlack text-white',
   bgWhite: 'text-textBlack bg-white',
   bgOutline: 'border border-textLight text-textLight'
 };
 
 const roundedOptions = {
+   roundedXl: 'rounded-xl',
   roundedFull: 'rounded-full',
-  roundedLg: 'rounded-lg'
+ roundedLg: 'rounded-lg',
+ rouded: 'rounded-[15px]',
 };
 
 const paddingOption ={
   1: 'px-3 py-1',
   2: 'px-3 py-3',
-  3: 'px-7 py-3'
+  3: 'px-7 py-3',
+  4: 'px-4 py-4'
 }
 
 const clickOption ={

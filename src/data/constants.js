@@ -1,9 +1,10 @@
 const MOOD_TYPES = [
-  { id: 1, mood: 'happy', emoji: '😀', color: 'emotionVeryGood' },
+
   { id: 2, mood: 'ecstatic', emoji: '😁', color: 'emotionVeryGood' },
   { id: 3, mood: 'neutral', emoji: '😐', color: 'emotionNeutral' },
   { id: 4, mood: 'annoyed', emoji: '😠', color: 'emotionSad' },
   { id: 5, mood: 'displesed', emoji: '😞', color: 'emotionVerySad' },
+  { id: 1, mood: 'happy', emoji: '😀', color: 'emotionVeryGood' },
   { id: 6, mood: 'angry', emoji: '😤', color: 'emotionVerySad' },
   { id: 7, mood: 'content', emoji: '😊', color: 'emotionGood' },
   { id: 8, mood: 'frustrated', emoji: '🤬', color: 'emotionSad' },

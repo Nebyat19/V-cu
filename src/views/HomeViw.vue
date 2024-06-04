@@ -7,10 +7,13 @@
  <div class="flex justify-between mt-6">   <Date>Aug 23</Date>
  
  <Memories> 2 memories</Memories></div>
+ <NavBottom/>
 </template>
 
 <script setup>
 import NavHeader from '@/components/NavHeader.vue';
 import Date from '@/components/ui/Date.vue';
 import Memories from '@/components/ui/Memories.vue';
+import NavBottom from '@/components/NavBottom.vue';
+ 
 </script>
