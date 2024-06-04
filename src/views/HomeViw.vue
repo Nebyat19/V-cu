@@ -4,15 +4,16 @@
     <h3 class="text-textLight tracking-wide leading-6 text-sm mt-3">Don't let a bad day make you feel like you have a bad life </h3>
 
 
-<div class="block scrollbar-hidden">
+<div class="flex flex-col gap-3 scrollbar-hidden">
     <div class="flex flex-col gap-3">
+  
+<RoundedCardContainer/>
+ </div>
+ <div class="flex flex-col gap-3">
     <div class="flex justify-between mt-6">   <Date>Aug 23</Date>
  
  <Memories> 2 memories</Memories>
 </div>
-<RoundedCardContainer/>
- </div>
-
 <RoundedCardContainer/>
  </div>
  <div class="flex flex-col gap-3">
