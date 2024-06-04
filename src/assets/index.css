@@ -32,6 +32,11 @@ html{
 h1{
   font-weight: 800;
 }
-.app-container{
-  scrollbar-width: 0px;
+.scrollbar-hidden{
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;  
+   
+   
+
 }

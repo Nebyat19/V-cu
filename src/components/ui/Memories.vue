@@ -1,5 +1,5 @@
 <template>
-    <span class="text-sm rounded-full px-2 py-1 text-textBlack bg-gray-300">
+    <span class="text-xs rounded-full px-1 py-1 text-slate-800 bg-gray-300">
         <slot>
 
         </slot>

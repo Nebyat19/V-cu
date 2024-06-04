@@ -1,20 +1,40 @@
 <template>
-  <div
+  <label
+    :for="moodtype.mood"
+    @click="handleClick"
     class="px-7 py-3 cursor-pointer gap-2 rounded-lg flex items-center justify-center flex-col"
-    :class="'bg-' + moodtype.color"
+    :class="[bgColor]"
   >
     <span class="text-3xl">{{ moodtype.emoji }}</span>
-    <span class="text-textLight font-semibold text-[0.7rem]">{{ moodtype.mood }}</span>
-  </div>
+    <span class="font-semibold text-[0.7rem]">{{ moodtype.mood }}</span>
+  </label>
+  <input
+    class="hidden"
+    :value="moodtype.mood"
+    type="radio"
+    name="mood"
+    :id="moodtype.mood"
+    :checked="selectedMood === moodtype.mood"
+  />
 </template>
 
 <script setup>
-defineProps({
+import { computed } from 'vue'
+const props = defineProps({
   moodtype: {
     type: Object,
     required: true
+  },
+  handleCheckboxChange: {
+    type: Function,
+    require: true
+  },
+  selectedMood: {
+    type: String,
+    require: true
   }
 })
+
 const colors = [
   'bg-emotionVeryGood',
   'bg-emotionVeryGood',
@@ -26,4 +46,13 @@ const colors = [
   'bg-emotionSad',
   'bg-emotionVerySad'
 ]
+const bgColor = computed(() =>
+  props.selectedMood === props.moodtype.mood
+    ? 'bg-orange-300 text-white'
+    : 'bg-' + props.moodtype.color + ' text-textLight'
+)
+
+const handleClick = () => {
+  props.handleCheckboxChange(props.moodtype.mood)
+}
 </script>

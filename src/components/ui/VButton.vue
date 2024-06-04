@@ -55,13 +55,18 @@ const paddingOption ={
   3: 'px-7 py-3'
 }
 
+const clickOption ={
+  1:''
+}
 const bgClass = ref(bgOptions[props.bg] || bgOptions.bgBlack)
 const roundedClass = computed(() => roundedOptions[props.rounded] || roundedOptions.roundedFull);
 const paddingCalss = computed(()=>paddingOption[props.padding] || paddingOption[3])
 
 const onClick =()=>{
-if(props.canClick)
-bgClass.value = bgClass.value ==='border border-textLight text-textLight' ? bgOptions.bgBlack : bgOptions.bgOutline
+if(props.canClick){
+
+  bgClass.value = bgClass.value ==='border border-textLight text-textLight' ? bgOptions.bgBlack : bgOptions.bgOutline
+}
 
 }
 

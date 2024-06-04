@@ -65,3 +65,8 @@ const CATEGORIES  = [
 ;
 export {CATEGORIES}
 
+import ICON_SEARCH from '@/assets/images/icons8-search-64.png'
+import AVATOR_MALE from '@/assets/images/icons8-avatar-male.png'
+import AVATOR_FEMALE from '@/assets/images/icons8-avatar-female.png'
+
+export {ICON_SEARCH,AVATOR_MALE,AVATOR_FEMALE}

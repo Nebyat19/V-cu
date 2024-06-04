@@ -1,0 +1,23 @@
+<template>
+    <header class="flex items-center mb-5 justify-between">
+       <div class="w-12  rounded-full h-12 relative">
+       <img :src="AVATOR_FEMALE" class="absolute inset-0 w-full h-full overflow-hidden" alt="">
+       </div>
+       <ul class="flex items-center justify-end gap-8">
+        <li class="flex rounded-lg justify-between  bg-gray-50 px-2 py-1">
+            <input class="text-xs  text-gray-500 outline-none px-3  bg-gray-50 w-32" type="text">
+           <img class="w-6 h-6" :src="ICON_SEARCH" alt="">
+        <span class=""></span>
+        </li>  
+        <li><a href=""><IconBars3/></a></li>
+       </ul>
+    </header>
+</template>
+
+<script setup>
+import IconBars3 from "./icons/IconBars3.vue";
+import IconSearch from "./icons/IconSearch.vue";
+import {ICON_SEARCH,AVATOR_MALE,AVATOR_FEMALE} from '@/data/constants'
+
+
+</script>
