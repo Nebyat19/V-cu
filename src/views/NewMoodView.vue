@@ -1,6 +1,6 @@
 <template>
     <AppContainer>
-      <div class="scrollbar-hidden">
+     
         <div class="flex justify-end">
         <IconClose />
       </div>
@@ -23,7 +23,7 @@
       <div class="flex justify-end mr-5 mt-5">
         <VButton rounded="roundedLg" padding="2" bg="bgGradient">Next <IconNext /></VButton>
       </div>
-      </div>
+    
     </AppContainer>
   </template>
   

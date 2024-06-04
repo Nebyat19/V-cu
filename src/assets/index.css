@@ -3,40 +3,31 @@
 @tailwind components;
 @tailwind utilities;
  
-@layer base {
-  :root {
 
-   
-  }
  
-  .dark {
-   
-  }
-}
- 
-@layer base {
-  *, *::after, *::after {
-    scrollbar-width: 0px;
-   
-  }
-  body {
- background-color: #462009;
-  }
-  
-}
-html{
-  -ms-overflow-style: none;  
+html {
   scrollbar-width: none;
- 
 }
+
 h1{
   font-weight: 800;
+}
+.body{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 .scrollbar-hidden{
   overflow-y: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;  
-   
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  box-sizing: content-box;
    
 
 }
