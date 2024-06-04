@@ -1,11 +1,11 @@
 <template>
 <app-container>
-  <HomeViwVue/>
+  <HomeView/>
 </app-container>
 </template>
 
 <script setup>
-import HomeViwVue from './views/HomeViw.vue'
+import HomeView from './views/HomeView.vue'
 import NewMoodView from './views/NewMoodView.vue'
 
 </script>
