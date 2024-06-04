@@ -4,9 +4,29 @@
     <h3 class="text-textLight tracking-wide leading-6 text-sm mt-3">Don't let a bad day make you feel like you have a bad life </h3>
 
 
- <div class="flex justify-between mt-6">   <Date>Aug 23</Date>
+<div class="block scrollbar-hidden bg-2">
+    <div class="flex flex-col gap-3">
+    <div class="flex justify-between mt-6">   <Date>Aug 23</Date>
  
- <Memories> 2 memories</Memories></div>
+ <Memories> 2 memories</Memories>
+</div>
+<RoundedCardContainer/>
+ </div>
+ <div class="flex flex-col gap-3">
+    <div class="flex justify-between mt-6">   <Date>Aug 23</Date>
+ 
+ <Memories> 2 memories</Memories>
+</div>
+<RoundedCardContainer/>
+ </div>
+ <div class="flex flex-col gap-3">
+    <div class="flex justify-between mt-6">   <Date>Aug 23</Date>
+ 
+ <Memories> 2 memories</Memories>
+</div>
+<RoundedCardContainer/>
+ </div>
+</div>
  <NavBottom/>
 </template>
 
@@ -15,5 +35,6 @@ import NavHeader from '@/components/NavHeader.vue';
 import Date from '@/components/ui/Date.vue';
 import Memories from '@/components/ui/Memories.vue';
 import NavBottom from '@/components/NavBottom.vue';
+import RoundedCardContainer from '@/components/ui/RoundedCardContainer.vue';
  
 </script>

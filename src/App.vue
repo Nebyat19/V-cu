@@ -1,6 +1,6 @@
 <template>
 <app-container>
-  <NewMoodView/>
+  <HomeViwVue/>
 </app-container>
 </template>
 

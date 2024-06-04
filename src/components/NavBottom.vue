@@ -1,5 +1,5 @@
 <template>
-<data class="absolute flex gap-3 bottom-3 left-1/2 -translate-x-1/2">
+<data class="absolute flex gap-3 bottom-1 left-1/2 -translate-x-1/2">
     <VButton rounded="rouded" padding="1" bg="bgGradient2">
     <span>
       <IconCalander />

@@ -1,11 +1,11 @@
 <template>
     <header class="flex items-center mb-5 justify-between">
        <div class="w-12  rounded-full h-12 relative">
-       <img :src="AVATOR_FEMALE" class="absolute inset-0 w-full h-full overflow-hidden" alt="">
+       <img :src="AVATOR_MALE" class="absolute inset-0 w-full h-full overflow-hidden" alt="">
        </div>
        <ul class="flex items-center justify-end gap-8">
-        <li class="flex rounded-lg justify-between  bg-gray-50 px-2 py-1">
-            <input class="text-xs  text-gray-500 outline-none px-3  bg-gray-50 w-32" type="text">
+        <li class="flex rounded-lg justify-between border border-gray-100 px-2 py-1">
+            <input class="text-xs  text-gray-500 outline-none px-3 bg-inherit bg-opacity-0 w-32" type="text">
            <img class="w-6 h-6" :src="ICON_SEARCH" alt="">
         <span class=""></span>
         </li>  
