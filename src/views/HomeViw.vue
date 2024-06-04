@@ -12,11 +12,7 @@
 </div>
 <RoundedCardContainer/>
  </div>
- <div class="flex flex-col gap-3">
-    <div class="flex justify-between mt-6">   <Date>Aug 23</Date>
- 
- <Memories> 2 memories</Memories>
-</div>
+
 <RoundedCardContainer/>
  </div>
  <div class="flex flex-col gap-3">
