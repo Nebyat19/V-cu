@@ -2,7 +2,7 @@
     <AppContainer>
      
         <div class="flex justify-end">
-        <IconClose />
+        <IconBack />
       </div>
       <H1>Dear Xhetu!</H1>
       <h4 class="text-xs font-bold  text-slate-800">How was your day?</h4>
@@ -33,7 +33,7 @@
   import VButton from '@/components/ui/VButton.vue'
   import MoodList from '../components/ui/MoodList.vue'
   import AppContainer from '@/components/AppContainer.vue'
-  import IconClose from '@/components/icons/IconClose.vue'
+  import IconBack from '@/components/icons/IconBack.vue'
   import IconNext from '@/components/icons/IconNext.vue'
   import { ref } from 'vue'
   

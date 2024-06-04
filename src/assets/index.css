@@ -10,6 +10,7 @@
   }
   html {
     scrollbar-width: none;
+    background-color: #462009;
   }
 
 h1{
@@ -34,4 +35,5 @@ body::-webkit-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;  
   overflow-y: hidden;
+ 
 }
