@@ -3,14 +3,14 @@
     <slot>
       <div class="flex">
         <span class="flex  flex-col items-center justify-center pr-3   border-r border-gray-400">
-          <h1 class="text-2xl text-slate-700">03</h1>
+          <h1 class="text-xl text-slate-700">03</h1>
           <Date>Aug</Date></span
         >
 
       <div class="flex flex-col w-full gap-1 ml-4">
         <div class="flex items-center justify-between ">
-          <h2 class="text-lg font-semibold text-slate-800">Hard Day Af</h2>
-          <h1 class="text-lg">😞</h1>
+          <h2 class="text-md font-semibold text-slate-800">Hard Day Af</h2>
+          <h1 class="text-md">😞</h1>
         </div>
         <h3 class="text-xs text-textLight">I had a wounderfull day! today was...</h3>
       </div>
