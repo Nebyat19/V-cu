@@ -1,119 +1,60 @@
 <template>
+   <div class="py-3 px-4 h-screen bg-[#fcfbfa]">
+
   <NavHeader />
-  <h-1>Good Morning!</h-1>
+  <h-1>{{ greeting }}</h-1>
   <h3 class="text-textLight tracking-wide leading-6 text-sm mt-3">
     Don't let a bad day make you feel like you have a bad life
   </h3>
 
-  <div class=" h-96 pb-16 scrollbar-hidden">
-
-     <MoodRecentList v-for="recentMoods in AllrecentMoods" :key="recentMoods" :recentMoods/>
+  <div class="h-96 pb-16 scrollbar-hidden">
+    <MoodRecentList v-for="recentMoods in AllrecentMoods" :key="recentMoods.id" :recentMoods />
   </div>
   <NavBottom />
+   </div>
 </template>
 
 <script setup>
 import NavHeader from '@/components/NavHeader.vue'
 import NavBottom from '@/components/NavBottom.vue'
 import MoodRecentList from '@/components/ui/MoodRecentList.vue'
+import { getGreeting } from '@/utils/getGreeting'
+const greeting = getGreeting()
 
+const AllrecentMoods = [
 
-
-const AllrecentMoods = [ //ad Id and Time to each mood // send only 10 recent // feelings like happy, frustera.. //what was about [family, freind ..]
-   [
-  {
-    day:'11',
-    week: 'Monday',
-    month: 'Aug',
-    year: '2023',
-    head: 'Feeling Good',
-    emoji: '😊',
-    text: 'I had a great day today. I went to the park and played with my friends. I also had a great time with my family. I am so happy and grateful for everything in my life.',
-    bg: 'bg-emotionVeryGood'
-  },
-  {
-    day:'10',
-    week: 'Tuesday',
-    month: 'Aug',
-      year: '2023',
-    head: 'Feeling Sad',
-    emoji: '😔',
-    text: 'I had a bad day today. I got into a fight with my friend and I feel really sad. I wish I could go back and change things. I hope tomorrow will be better.',
-    bg: 'bg-emotionSad'
-  },
-
-],[
-   //Jul
-   {
-      day:'31',
+  [
+    {
+      id: '1',
+      time: '10:00 AM',
+      day: '11',
       week: 'Monday',
-      month: 'Jul',
+      month: 'Aug',
       year: '2023',
       head: 'Feeling Good',
       emoji: '😊',
+      feeling: 'Happy',
+      about: ['Family', 'Friends'],
       text: 'I had a great day today. I went to the park and played with my friends. I also had a great time with my family. I am so happy and grateful for everything in my life.',
-      bg: 'bg-emotionVeryGood'   
-   },
-   {
-      day:'30',
+      bg: 'bg-emotionVeryGood'
+    },
+    {
+      id:'2',
+      time: '1:00 AM',
+      
+      day: '12',
       week: 'Tuesday',
-      month: 'Jul',
+      month: 'Aug',
       year: '2023',
       head: 'Feeling Sad',
-      emoji: '😔',
-      text: 'I had a bad day today. I got into a fight with my friend and I feel really sad. I wish I could go back and change things. I hope tomorrow will be better.',
-      bg: 'bg-emotionSad'
-   },
-   {
-      day:'29',
-      week: 'Wednesday',
-      month: 'Jul',
-      year: '2023',
-      head: 'Feeling Good',
-      emoji: '😊',
+      emoji: '😢',
+      feeling: 'Sad',
+      about: ['Family', 'Friends'],
       text: 'I had a great day today. I went to the park and played with my friends. I also had a great time with my family. I am so happy and grateful for everything in my life.',
-      bg: 'bg-emotionVeryGood'
-   },
-   {
-      day:'28',
-      week: 'Thursday',
-      month: 'Jul',
-      year: '2023',
-      head: 'Feeling Sad',
-      emoji: '😔',
-      text: 'I had a bad day today. I got into a fight with my friend and I feel really sad. I wish I could go back and change things. I hope tomorrow will be better.',
       bg: 'bg-emotionSad'
-   },
-   {
-      day:'27',
-      week: 'Friday',
-      month: 'Jul',
-      year: '2023',
-      head: 'Feeling Good',
-      emoji: '😊',
-      text: 'I had a great day today. I went to the park and played with my friends. I also had a great time with my family. I am so happy and grateful for everything in my life.',
-      bg: 'bg-emotionVeryGood'
-   },
-   {
-      day:'26',
-      week: 'Saturday',
-      month: 'Jul',
-      year: '2023',
-      head: 'Feeling Sad',
-      emoji: '😔',
-      text: 'I had a bad day today. I got into a fight with my friend and I feel really sad. I wish I could go back and change things. I hope tomorrow will be better.',
-      bg: 'bg-emotionSad'
-   },
-   {
-      day:'25',
-      week: 'Sunday',
-      month: 'Jul',
-      year: '2023',
-      head: 'Feeling Good',
-      emoji: '😊',
-      text: 'I had a great day today. I went to the park and played with my friends. I also had a great time with my family. I am so happy and grateful for everything in my life.',
-      bg: 'bg-emotionVeryGood'
-   }
-]
+
+    },
+    
+  ]
 ]
 </script>

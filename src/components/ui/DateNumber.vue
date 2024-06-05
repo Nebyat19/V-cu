@@ -3,7 +3,7 @@
     
     ref="childelement"
     :class="CLASS_DEFAULT"
-    class="pb-1 size-10 grid cursor-pointer place-content-center border border-[#f4ede3] rounded-full text-[#cdb89b] font-date"
+    class="pb-1 size-11 grid cursor-pointer place-content-center border border-[#f4ede3] rounded-full text-[#cdb89b] font-date"
   >
     <slot class=""> </slot>
   </div>

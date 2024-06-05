@@ -1,11 +1,6 @@
 <template>
 <app-container>
-  <HomeView/>
+  <router-view></router-view>
 </app-container>
 </template>
 
-<script setup>
-import HomeView from './views/HomeView.vue'
-import NewMoodView from './views/NewMoodView.vue'
-
-</script>

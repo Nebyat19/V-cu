@@ -41,4 +41,7 @@ body::-webkit-scrollbar {
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
 }
+.scrollable{
+  height: var(--dynamic-height, 10.5rem);
+}
 
