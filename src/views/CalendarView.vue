@@ -2,13 +2,13 @@
   <div class="py-3 relative px-4 mx-auto h-screen bg-pageBackground">
     <ButtonBack />
     <H1>My Calendar</H1>
-    <div class="flex justify-between mt-5">
+    <div class="flex justify-between mt-3">
       <div class="flex justify-start gap-3">
-        <VButton>month</VButton>
-        <VButton bg="bgWhite">Week</VButton>
+        <VButton padding=1>month</VButton>
+        <VButton padding=1 bg="bgWhite">Week</VButton>
       </div>
 
-      <VButton bg="bgWhite">Aug <DownIcon /></VButton>
+      <VButton padding=1 bg="bgWhite">Aug <DownIcon /></VButton>
     </div>
 
     <div class="bg-white p-3 grid grid-cols-7 mt-3 shadow-sm rounded-[20px]">
