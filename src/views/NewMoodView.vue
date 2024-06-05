@@ -1,5 +1,5 @@
 <template>
-  <div class="py-3 px-4 h-screen bg-[#fcfbfa]">
+  <div class="py-3 px-4 scrollbar-hidden h-screen bg-[#fcfbfa]">
     <ButtonBack />
     <H1>Dear Xhetu!</H1>
     <h4 class="text-xs mt-1 text-slate-800">How was your day?</h4>

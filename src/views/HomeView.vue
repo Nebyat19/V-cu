@@ -54,7 +54,37 @@ const AllrecentMoods = [
       bg: 'bg-emotionSad'
 
     },
-    
+    {
+      id: '1',
+      time: '10:00 AM',
+      day: '11',
+      week: 'Monday',
+      month: 'Aug',
+      year: '2023',
+      head: 'Feeling Good',
+      emoji: '😊',
+      feeling: 'Happy',
+      about: ['Family', 'Friends'],
+      text: 'I had a great day today. I went to the park and played with my friends. I also had a great time with my family. I am so happy and grateful for everything in my life.',
+      bg: 'bg-emotionVeryGood'
+    },
+    {
+      id:'2',
+      time: '1:00 AM',
+      
+      day: '12',
+      week: 'Tuesday',
+      month: 'Aug',
+      year: '2023',
+      head: 'Feeling Sad',
+      emoji: '😢',
+      feeling: 'Sad',
+      about: ['Family', 'Friends'],
+      text: 'I had a great day today. I went to the park and played with my friends. I also had a great time with my family. I am so happy and grateful for everything in my life.',
+      bg: 'bg-emotionSad'
+
+    },
+
   ]
 ]
 </script>

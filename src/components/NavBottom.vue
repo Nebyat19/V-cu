@@ -8,7 +8,7 @@
       </span>
       <span><IconUser /></span>
      
-      <router-link class="bg-white rounded-xl p-2" to="/"><IconHome />
+      <router-link class="bg-white rounded-xl p-2" to="memo"><IconHome />
       </router-link>
     </VButton>
     <router-link to="add">
