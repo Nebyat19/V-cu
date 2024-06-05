@@ -32,20 +32,20 @@
       <div class="flex justify-between">
         <H1 color="text-gray-300">August 10</H1>
         <span
-          class="text-2xl w-12 h-12 grid place-content-center bg-gray-500 border border-opacity-90 border-gray-900 bg-opacity-30 rounded-xl"
+          class="text-2xl w-10 h-10 grid place-content-center bg-gray-500 border border-opacity-90 border-gray-900 bg-opacity-30 rounded-xl"
           >😊</span
         >
       </div>
-      <div class="mt-5 flex flex-col gap-2">
+      <div class="mt-3 flex flex-col gap-2">
         <h3 class="text-sm text-gray-300">I was feeling</h3>
         <div class="flex items-center text-center gap-2">
-          <span class="text-sm font-semibold border-2 border-white rounded-3xl text-white px-4 py-1"
+          <span class="text-xs font-semibold border-2 border-white rounded-3xl text-white px-4 py-1"
             >happy</span
           >
-          <span class="text-sm font-semibold border-2 border-white rounded-3xl text-white px-4 py-1"
+          <span class="text-xs font-semibold border-2 border-white rounded-3xl text-white px-4 py-1"
             >surprized</span
           >
-          <span class="text-sm font-semibold border-2 border-white rounded-3xl text-white px-4 py-1"
+          <span class="text-xs font-semibold border-2 border-white rounded-3xl text-white px-4 py-1"
             >annoyed</span
           >
         </div>
