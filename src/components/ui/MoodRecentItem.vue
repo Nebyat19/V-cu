@@ -1,5 +1,5 @@
 <template>
-     <div class="flex">
+     <div class="flex p-2">
         <span class="flex  flex-col items-center justify-center pr-3   border-r border-gray-400">
           <h1 class="text-xl text-slate-700">{{ computedRecentMood.day }}</h1>
           <Date>{{computedRecentMood.month}}</Date></span

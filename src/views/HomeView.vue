@@ -5,7 +5,7 @@
     Don't let a bad day make you feel like you have a bad life
   </h3>
 
-  <div class="h-96 pb-14 scrollbar-hidden">
+  <div class=" h-96 pb-16 scrollbar-hidden">
 
      <MoodRecentList v-for="recentMoods in AllrecentMoods" :key="recentMoods" :recentMoods/>
   </div>
@@ -19,7 +19,7 @@ import MoodRecentList from '@/components/ui/MoodRecentList.vue'
 
 
 
-const AllrecentMoods = [
+const AllrecentMoods = [ //ad Id and Time to each mood // send only 10 recent // feelings like happy, frustera.. //what was about [family, freind ..]
    [
   {
     day:'11',

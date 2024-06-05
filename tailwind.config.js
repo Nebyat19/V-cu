@@ -29,8 +29,9 @@ module.exports = {
       },
       fontFamily: {
         main: ['Poppins', 'sans-serif'],
-        h1_1: ['Playfair Display', 'sans-serif'],
-        h1: ['Noto Serif JP','serif'],
+        // h1_1: ['Playfair Display', 'sans-serif'],
+        // h1_2: ['Noto Serif JP','serif'],
+        h1:["Yeseva One", "serif"],
         date: ['Chocolate Classical Sans', 'sans-serif']
       },
 
