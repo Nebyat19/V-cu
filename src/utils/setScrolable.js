@@ -15,7 +15,7 @@ export  const setScrollable = (element) => {
       dynamicHeight += 0.1 * scrollDelta
     }
 
-    dynamicHeight = Math.max(10.5, Math.min(30, dynamicHeight))
+    dynamicHeight = Math.max(1, Math.min(30, dynamicHeight))
     if (Math.abs(oldDynamicHeight - dynamicHeight) > 1.5) {
       element.style.setProperty('--dynamic-height', `${dynamicHeight}rem`)
       oldDynamicHeight = dynamicHeight
