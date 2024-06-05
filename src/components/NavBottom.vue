@@ -5,7 +5,7 @@
       <IconCalander />
     </span>
     <span><IconUser /></span>
-    <span class="bg-white rounded-xl p-3"><IconHome/></span>
+    <span class="bg-white rounded-xl p-2"><IconHome/></span>
    
   </VButton>
   <VButton rounded="rouded" padding="4" bg="bgGradient2">
