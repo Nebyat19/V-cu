@@ -1,32 +1,34 @@
 <template>
-  <div class="py-3 relative px-4 mx-auto h-screen bg-pageBackground">
+  <div  class="py-3 relative px-4 mx-auto h-screen bg-pageBackground">
     <ButtonBack />
     <H1>My Calendar</H1>
     <div class="flex justify-between mt-3">
       <div class="flex justify-start gap-3">
-        <VButton padding=1>month</VButton>
-        <VButton padding=1 bg="bgWhite">Week</VButton>
+        <VButton padding="1">month</VButton>
+        <VButton padding="1" bg="bgWhite">Week</VButton>
       </div>
 
-      <VButton padding=1 bg="bgWhite">Aug <DownIcon /></VButton>
+      <VButton padding="1" bg="bgWhite">Aug <DownIcon /></VButton>
     </div>
 
-    <div class="bg-white p-3 grid grid-cols-7 mt-3 shadow-sm rounded-[20px]">
+    <div  @click="changHeight" class="bg-white p-3 grid grid-cols-7 mt-3 shadow-sm rounded-[20px]">
       <template v-for="date in dates" :key="date">
         <DateNumber>{{ date }}</DateNumber></template
       >
     </div>
     <div
-      class="bg-gradient-to-b from-gradientStart from-10% via-gradientStart via-30% to-gradientEnd to-90% w-full left-0 pt-8 px-5 absolute bottom-0 rounded-t-[38px]"
+   ref="scrollable"
+
+    class="scrollable transition-all bg-gradient-to-b from-gradientStart from-10% via-gradientStart via-30% to-gradientEnd to-90% w-full left-0 pt-8 px-5 absolute bottom-0 rounded-t-[38px]"
     >
-     <div class="relative">
+      <div  @click="changHeight" class="relative">
         <span
-        class="w-10 h-10 pb-1 flex flex-col items-center justify-end absolute bottom-2 -translate-x-1/2 left-1/2 rounded-full"
-      >
-      
-        <DownIcon />
-      </span>
-     </div>
+          class="w-16 bg-pageBackground h-14 pb-1 flex flex-col items-center justify-end absolute bottom-2 -translate-x-1/2 left-1/2 rounded-full"
+        >
+        <UppIcon v-if="upp"/>
+          <DownIcon v-else />
+        </span>
+      </div>
       <div class="flex justify-between">
         <H1 color="text-gray-300">August 10</H1>
         <span
@@ -48,12 +50,7 @@
           >
         </div>
         <h3 class="text-md mt-5 text-gray-300">What Happend</h3>
-        <div
-          
-          ref="scrollable"
-        
-          class="scrollable pb-10 scrollbar-hidden flex flex-col gap-1"
-        >
+        <div class=" pb-20 scrollbar-hidden flex h-80 flex-col gap-1">
           <RoundedCardContainer
             v-for="recentMood in recentMoods"
             :key="recentMood"
@@ -80,16 +77,21 @@ import H1 from '@/components/ui/H1.vue'
 import ButtonBack from '@/components/ui/ButtonBack.vue'
 import DateNumber from '@/components/ui/DateNumber.vue'
 import DownIcon from '@/components/icons/DownIcon.vue'
+import UppIcon from '@/components/icons/UppIcon.vue'
 import RoundedCardContainer from '@/components/ui/RoundedCardContainer.vue'
 import IconNextArrow from '@/components/icons/IconNextArrow.vue'
-import { ref, onMounted } from 'vue'
-import {setScrollable} from '@/utils/setScrolable'
+import { ref, vShow } from 'vue'
 
 const scrollable = ref(null)
+const upp = ref(true)
+let h = '10rem'
 
-onMounted(() => {
-    setScrollable(scrollable.value)
-})
+const changHeight = () => {
+  h = h === '10rem' ? (h = '29rem') : '10rem'
+  scrollable.value.style.setProperty('--dynamic-height', `${h}`)
+  upp.value=!upp.value
+ 
+}
 const dates = [
   '',
   '',
