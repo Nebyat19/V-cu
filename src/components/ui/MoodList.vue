@@ -12,15 +12,21 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import MoodItem from './MoodItem.vue'
 const selectedMood = ref('')
 
-defineProps({
+const props=defineProps({
   MOOD_TYPES: {
     type: Array,
     required: true
+  },
+  setMood:{
+    type:Function
   }
+})
+watch(selectedMood,()=>{
+  props.setMood(selectedMood)
 })
 const handleCheckboxChange =(selected) =>{
      selectedMood.value = selected;

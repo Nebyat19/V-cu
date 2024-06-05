@@ -12,12 +12,20 @@ const router = createRouter({
     {
       path: '/add',
       name: 'add',
-      component: () => import('../views/NewMoodView.vue')
+      component: () => import('../views/NewMoodView.vue'),
+      props:true,
     },
     {
       path:'/memo',
       name:'memo',
       component: ()=> import ('../views/CalendarView.vue')
+    },
+    {
+    path:'/add-detail',
+    name:'add-detail',
+    component:()=> import('../views/AddDetailView.vue'),
+    props:true,
+    
     }
   ]
 })

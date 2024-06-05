@@ -4,7 +4,7 @@
     <H1>Dear Xhetu!</H1>
     <h4 class="text-xs mt-1 text-slate-800">How was your day?</h4>
 
-    <MoodList :MOOD_TYPES />
+    <MoodList :MOOD_TYPES :setMood />
     <h3 class="my-5 text-textBlack font-semibold text-sm">What was about it?</h3>
     <div class="flex flex-wrap gap-1 w-[90%]">
       <VButton
@@ -18,7 +18,9 @@
       >
     </div>
     <div class="flex justify-end mr-5 mt-5">
-      <VButton rounded="roundedLg" padding="2" bg="bgGradient">Next <IconNext /></VButton>
+      <router-link :to="{ name: 'add-detail', params: {foo:'ddd'} }">
+        <VButton rounded="roundedLg" padding="2" bg="bgGradient">Next <IconNext /></VButton>
+      </router-link>
     </div>
   </div>
 </template>
@@ -33,6 +35,12 @@ import IconNext from '@/components/icons/IconNext.vue'
 import { ref } from 'vue'
 
 const selectedCatagory = ref([])
+const selectedMood = ref('')
+
+const setMood = (mood) => {
+  selectedMood.value = mood.value
+ 
+}
 
 const addCatagory = (item) => {
   if (selectedCatagory.value.includes(item)) {
