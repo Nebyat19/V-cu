@@ -1,5 +1,5 @@
 <template>
-  <div  class="py-3 relative px-4 mx-auto h-screen bg-pageBackground">
+  <div ref="container" class="py-3 relative select-none px-4 mx-auto h-screen bg-pageBackground">
     <ButtonBack />
     <H1>My Calendar</H1>
     <div class="flex justify-between mt-3">
@@ -19,7 +19,7 @@
     <div
    ref="scrollable"
 
-    class="scrollable transition-all bg-gradient-to-b from-gradientStart from-10% via-gradientStart via-30% to-gradientEnd to-90% w-full left-0 pt-8 px-5 absolute bottom-0 rounded-t-[38px]"
+    class="scrollable select-none transition-all bg-gradient-to-b from-gradientStart from-10% via-gradientStart via-30% to-gradientEnd to-90% w-full left-0 pt-8 px-5 absolute bottom-0 rounded-t-[38px]"
     >
       <div  @click="changHeight" class="relative">
         <span
@@ -80,9 +80,13 @@ import DownIcon from '@/components/icons/DownIcon.vue'
 import UppIcon from '@/components/icons/UppIcon.vue'
 import RoundedCardContainer from '@/components/ui/RoundedCardContainer.vue'
 import IconNextArrow from '@/components/icons/IconNextArrow.vue'
-import { ref, vShow } from 'vue'
+import { onMounted, ref} from 'vue'
+import setDragable from '@/utils/drag'
+
 
 const scrollable = ref(null)
+const container = ref(null)
+
 const upp = ref(true)
 let h = '10rem'
 
@@ -92,6 +96,9 @@ const changHeight = () => {
   upp.value=!upp.value
  
 }
+onMounted(() => {
+  setDragable(container.value,scrollable.value)
+})
 const dates = [
   '',
   '',

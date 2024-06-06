@@ -26,6 +26,29 @@ const router = createRouter({
     component:()=> import('../views/AddDetailView.vue'),
     props:true,
     
+    },
+    {
+      path:'/user/profile',
+      name:'profile',
+      component:()=>import('../views/user/ProfileView.vue')
+    },
+    {
+      path:'/stats',
+      name:'stats',
+      component:()=>import('../components/AnalyticsLayout.vue'),
+      children:[
+        {
+          path:'/stats',
+          name:'productivity',
+          component:()=>import('../views/analytics/RecordProductivity.vue')
+        },
+        {
+          path:'/analytics',
+          name:'analytics',
+          component:() => import('../views/analytics/Analytics.vue')
+
+        }
+      ]
     }
   ]
 })

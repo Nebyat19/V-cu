@@ -1,0 +1,3 @@
+<template>
+    recod productivity
+</template>
