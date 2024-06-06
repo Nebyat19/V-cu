@@ -26,18 +26,21 @@ const onDrag = (y) => {
     
 };
 function mapWalkToH(walk) {
-    let h;
+
+
+    let newh;
     if (walk < 0) {
-        h = 30;
+        newh = 30;
     } else if (walk > 900) {
-        h = 10;
+        newh = 10;
     } else {
-        h = 30 - (walk / 40);
+        newh = 30 - (walk / 500); //30 500
+        console.log(newh)
     }
     
-    if(h<1) h=10
-    if(h>31) h=31
-    return h;
+    if(newh<1) newh=10
+    if(newh>31) newh=31
+    return newh;
 }
 content.addEventListener('mousedown', (e) => {
     startDragging(e.pageY);

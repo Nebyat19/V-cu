@@ -19,11 +19,11 @@
     <div
    ref="scrollable"
 
-    class="scrollable select-none transition-all bg-gradient-to-b from-gradientStart from-10% via-gradientStart via-30% to-gradientEnd to-90% w-full left-0 pt-8 px-5 absolute bottom-0 rounded-t-[38px]"
+    class="scrollable overflow-hidden select-none transition-all bg-gradient-to-b from-gradientStart from-10% via-gradientStart via-30% to-gradientEnd to-90% w-full left-0 pt-8 px-5 absolute bottom-0 rounded-t-[38px]"
     >
       <div  @click="changHeight" class="relative">
         <span
-          class="w-16 bg-pageBackground h-14 pb-1 flex flex-col items-center justify-end absolute bottom-2 -translate-x-1/2 left-1/2 rounded-full"
+          class=" w-20 bg-pageBackground h-20 pb-0 flex flex-col items-center justify-end absolute bottom-3 -translate-x-1/2 left-1/2 rounded-full"
         >
         <UppIcon v-if="upp"/>
           <DownIcon v-else />
