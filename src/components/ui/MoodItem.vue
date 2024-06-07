@@ -53,6 +53,6 @@ const bgColor = computed(() =>
 )
 
 const handleClick = () => {
-  props.handleCheckboxChange(props.moodtype.mood)
+  props.handleCheckboxChange(props.moodtype.mood, {bgColor: bgColor.value, emoji: props.moodtype.emoji, mood: props.moodtype.mood})
 }
 </script>

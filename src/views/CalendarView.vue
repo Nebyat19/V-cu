@@ -51,9 +51,9 @@
         </div>
         <h3 class="text-md mt-5 text-gray-300">What Happend</h3>
         <div class=" pb-20 scrollbar-hidden flex h-80 flex-col gap-1">
-          <RoundedCardContainer
-            v-for="recentMood in recentMoods"
-            :key="recentMood"
+        <router-link   v-for="recentMood in recentMoods"
+        :key="recentMood" :to="{ name: 'mood-detail', params: { id: recentMood.id || 0 } }">  <RoundedCardContainer
+          
             :bgColor="recentMood.bg"
           >
             <div class="flex items-center justify-between gap-2 p-2">
@@ -65,6 +65,7 @@
               <VButton rounded="rouded" padding="2" bg="bgGradient"><IconNextArrow /></VButton>
             </div>
           </RoundedCardContainer>
+        </router-link>
         </div>
       </div>
     </div>

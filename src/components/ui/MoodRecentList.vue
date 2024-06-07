@@ -2,12 +2,14 @@
      <div class="flex flex-col gap-3 ">
     <div class="flex flex-col gap-3">
       <div class="flex justify-between mt-6">
-        <Date>{{ recentMoods[0].month }} {{ recentMoods[0].year }} </Date>
+        <Date>{{ recentMoods.month }} {{ recentMoods.year }} </Date>
 
-        <Memories> {{ recentMoods.length }} memories</Memories>
+        <Memories> {{ recentMoods.data.length }} memories</Memories>
       </div>
-      <RoundedCardContainer v-for="recentMood in recentMoods" :key="recentMood" :bgColor="recentMood.bg"><MoodRecentItem :recentMood  /></RoundedCardContainer>
-    </div>
+    <router-link  class="mb-5" v-for="recentMood in recentMoods.data" :key="recentMood"   :to="{ name: 'mood-detail', params: { id: recentMood.id || 0 } }">
+      <RoundedCardContainer :bgColor="recentMood.bg"><MoodRecentItem :recentMood  /></RoundedCardContainer>
+    </router-link>  
+  </div>
   </div>
 </template>
 

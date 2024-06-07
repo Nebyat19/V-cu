@@ -24,8 +24,14 @@ const router = createRouter({
     path:'/add-detail',
     name:'add-detail',
     component:()=> import('../views/AddDetailView.vue'),
-    props:true,
+   
     
+    },
+    {
+      path:'/mood/:id',
+      name:'mood-detail',
+      component:()=>import('../views/MoodDetailView.vue'),
+      props:true
     },
     {
       path:'/user/profile',

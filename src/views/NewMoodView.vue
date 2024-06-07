@@ -18,9 +18,9 @@
       >
     </div>
     <div class="flex justify-end mr-5 mt-5">
-      <router-link :to="{ name: 'add-detail', params: {foo:'ddd'} }">
-        <VButton rounded="roundedLg" padding="2" bg="bgGradient">Next <IconNext /></VButton>
-      </router-link>
+      <VButton @click="goNextPage" rounded="roundedLg" padding="2" bg="bgGradient"
+        >Next <IconNext
+      /></VButton>
     </div>
   </div>
 </template>
@@ -33,14 +33,22 @@ import MoodList from '../components/ui/MoodList.vue'
 import ButtonBack from '@/components/ui/ButtonBack.vue'
 import IconNext from '@/components/icons/IconNext.vue'
 import { ref } from 'vue'
+import { useMoodStore } from '@/stores/MoodStore.js'
+import { useRouter } from 'vue-router'
+import { formatDate } from '@/utils/formatDate.js'
+import Swal from 'sweetalert2'
 
 const selectedCatagory = ref([])
-const selectedMood = ref('')
-
-const setMood = (mood) => {
-  selectedMood.value = mood.value
- 
+const selectedMood = ref({})
+const router = useRouter()
+const mood = ref({})
+const moodStore = useMoodStore()
+const setMood = (selected, newmood) => {
+  selectedMood.value = selected.value
+  mood.value = newmood.value
+  console.log(mood.value)
 }
+const { day, time, month, dayOfWeek,year } = formatDate()
 
 const addCatagory = (item) => {
   if (selectedCatagory.value.includes(item)) {
@@ -48,5 +56,37 @@ const addCatagory = (item) => {
   } else {
     selectedCatagory.value.push(item)
   }
+}
+
+const goNextPage = () => {
+  if (selectedMood.value == '' || selectedCatagory.value.length == 0) {
+    Swal.fire({
+      toast: true,
+      position: 'top-end',
+      icon: 'error',
+      title: 'Please select a mood and a catagory',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    return
+  }
+  moodStore.recordMood({
+    date: day,
+    month: month,
+    dayOfWeek: dayOfWeek,
+    time: time,
+    year:year,
+    about: selectedCatagory.value,
+    emoji: mood.value.emoji,
+    mood: mood.value.mood,
+    bg: mood.value.bgColor
+  })
+
+  router.push({ name: 'add-detail' })
 }
 </script>

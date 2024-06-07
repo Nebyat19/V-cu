@@ -15,6 +15,7 @@
 import { ref, watch } from 'vue'
 import MoodItem from './MoodItem.vue'
 const selectedMood = ref('')
+const mood = ref({})
 
 const props=defineProps({
   MOOD_TYPES: {
@@ -26,11 +27,10 @@ const props=defineProps({
   }
 })
 watch(selectedMood,()=>{
-  props.setMood(selectedMood)
+  props.setMood(selectedMood,mood)
 })
-const handleCheckboxChange =(selected) =>{
+const handleCheckboxChange =(selected,newmood) =>{
      selectedMood.value = selected;
-    
-     
+     mood.value = newmood;   
     }
 </script>
