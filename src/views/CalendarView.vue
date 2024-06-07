@@ -80,13 +80,13 @@ import DownIcon from '@/components/icons/DownIcon.vue'
 import UppIcon from '@/components/icons/UppIcon.vue'
 import RoundedCardContainer from '@/components/ui/RoundedCardContainer.vue'
 import IconNextArrow from '@/components/icons/IconNextArrow.vue'
-import { onMounted, ref} from 'vue'
+import { onMounted, ref, watch, watchEffect} from 'vue'
 import setDragable from '@/utils/drag'
 
 
 const scrollable = ref(null)
 const container = ref(null)
-
+const height = ref(29)
 const upp = ref(true)
 let h = '10rem'
 
@@ -96,8 +96,10 @@ const changHeight = () => {
   upp.value=!upp.value
  
 }
+
+
 onMounted(() => {
-  setDragable(container.value,scrollable.value)
+  setDragable(container.value,scrollable.value,height.value)
 })
 const dates = [
   '',

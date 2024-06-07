@@ -1,9 +1,8 @@
 
-const setDraggable = (container,content) => {
+const setDraggable = (container,content,h) => {
 let isDragging = false;
 let startY;
 let scrollTop;
-let h =29;
 const startDragging = (y) => {
     isDragging = true;
     startY = y - content.offsetTop;
