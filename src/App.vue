@@ -9,12 +9,12 @@
 import { onMounted } from 'vue'
 import configApp from  './configApp.js'
 
-const { getTelegram, setupBackButton, toggleBackButton, telegramId } = configApp()
+//const { getTelegram, setupBackButton, toggleBackButton, telegramId } = configApp()
 
-onMounted(() => {
-  setupBackButton()
- // toggleBackButton()
-  getTelegram()
-})
+// onMounted(() => {
+//   setupBackButton()
+//  // toggleBackButton()
+//   getTelegram()
+// })
 </script>
 
