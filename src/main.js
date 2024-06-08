@@ -5,9 +5,9 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
-import DefaultLayout from './DefaultLayout.vue'
 import H1 from '@/components/ui/H1.vue'
 import AppContainer from '@/components/AppContainer.vue'
+import './configApp.js'
 
 const app = createApp(App)
 
