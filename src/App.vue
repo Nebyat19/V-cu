@@ -8,7 +8,7 @@
 
 <script setup>
 import { onMounted } from 'vue'
-import configApp from  './configApp.js'
+
 
 
 </script>
