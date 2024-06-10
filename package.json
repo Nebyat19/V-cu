@@ -23,7 +23,8 @@
     "tailwindcss-animate": "^1.0.7",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
-    "vue-sweetalert2": "^5.0.11"
+    "vue-sweetalert2": "^5.0.11",
+    "vue-tg": "^0.6.1"
   },
   "devDependencies": {
     "@nightwatch/vue": "^3.1.0",
