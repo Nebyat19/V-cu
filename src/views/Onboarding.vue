@@ -18,7 +18,7 @@
 
 <script setup>
 import { ONBOARDING_IMAGE } from '@/data/constants.js'
-import { onMounted } from 'vue'
+import { onBeforeMount, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useConfigStore } from '@/stores/module/config.js'
 
@@ -26,7 +26,7 @@ import { useWebApp, useWebAppPopup } from 'vue-tg'
 
 const configStore = useConfigStore()
 const router = useRouter()
-onMounted(async () => {
+onBeforeMount(async () => {
   const userId = useWebApp().initDataUnsafe.user?.id || '1273456'
   !userId ? router.push('/change-port') : await configStore.init(userId)
   
