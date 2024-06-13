@@ -59,7 +59,7 @@ const text = ref('')
 const mood = computed(() => moodStore.getMood)
 onMounted(() => {
   if(!mood.value){
-    router.push('/')
+    router.push('/home')
   }
 })
 const saveEntry = () => {
@@ -112,9 +112,9 @@ const submitEntry = () => {
   }).then((result) => {
     
     if (result.isConfirmed) {
-      router.push('/')
+      router.push('/home')
     }
-    router.push('/')
+    router.push('/home')
   })
 }
 

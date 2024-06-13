@@ -57,7 +57,7 @@ No Mood found
     <div class="flex  items-baseline justify-between">
       <VButton
       padding="1" bg="bgGradient"
-        @click="router.push('/')"
+        @click="router.push('/home')"
         class="text-sm text-white hover:bg-slate-900 bg-black px-3 py-3  mt-3 rounded-lg"
       >
         Go Home
@@ -121,7 +121,7 @@ const confirmDeletion = (moodId) => {
 const removeMood = (moodId)=>{
   try {
     moodStore.removeMood(moodId)
-    router.push('/')
+    router.push('/home')
   } catch (error) {
     return error
   }

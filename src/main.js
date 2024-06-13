@@ -13,7 +13,7 @@ import VueTelegram from 'vue-tg'
 const app = createApp(App)
 
 app.use(createPinia())
-app.use(VueTelegram)
+//app.use(VueTelegram)
 app.use(router)
 app.component('h-1',H1)
 app.component('app-container',AppContainer)
