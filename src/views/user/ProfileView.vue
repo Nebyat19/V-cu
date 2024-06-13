@@ -42,7 +42,7 @@
         <input
           v-model="updateProfile.username"
         
-          class="py-2 px-3 bg-white border border-gray-400 rounded-xl"
+          class="py-1 w-full px-3 bg-white border border-gray-400 rounded-lg"
           type="text"
           name=""
           id=""
@@ -53,7 +53,7 @@
         <input
           v-model="updateProfile.password"
          
-          class="py-2 px-3 bg-white border border-gray-400 rounded-xl"
+          class="py-1 px-3 w-full bg-white border border-gray-400 rounded-lg"
           type="password"
           name=""
           id=""
