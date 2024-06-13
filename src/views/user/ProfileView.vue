@@ -60,10 +60,10 @@
         />
       </div>
     </div>
-    <h3 class="text-sm text-2 -mb-2">{{error}}</h3>
+    <h3 class="text-sm text-gray-900 -mb-2">{{error}}</h3>
     <span class="mt-10 px-1 grid place-items-center">
    
-      <VButton @click="handleSubmit" class="w-full" padding="3" rounded="roundedLg" bg="bgGradient"
+      <VButton class="hover:scale-105 w-full" @click="handleSubmit"  padding="3" rounded="roundedLg" bg="bgGradient"
         >Save And Continue
       </VButton>
     </span>
@@ -84,7 +84,7 @@
 <script setup>
 import ButtonBack from '@/components/ui/ButtonBack.vue'
 import { AVATOR_FEMALE, AVATOR_MALE } from '@/data/constants'
-import { computed, onBeforeMount, ref } from 'vue'
+import { computed, onBeforeMount, ref, watch } from 'vue'
 import VButton from '@/components/ui/VButton.vue'
 import { useConfigStore } from '@/stores/module/config'
 import CheckIcon from '@/components/icons/CheckIcon.vue'
@@ -102,11 +102,17 @@ const toggleAvator = () => {
   updateProfile.value.avator = updateProfile.value.avator === "male" ? "female" : "male"
 
 }
+watch(updateProfile,()=>{
+  error.value = ''
+}, {deep: true})
 const handleSubmit = async () => {
 
  const {e} = await configStore.updateUser(updateProfile.value)
   if(e){
    error.value = 'Username exists'
+  }else{
+    error.value = 'saved successfully!'
+   
   }
 }
 

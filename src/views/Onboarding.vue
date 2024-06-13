@@ -27,7 +27,7 @@ import { useWebApp, useWebAppPopup } from 'vue-tg'
 const configStore = useConfigStore()
 const router = useRouter()
 onBeforeMount(async () => {
-  const userId = useWebApp().initDataUnsafe.user?.id || '1273456'
+  const userId = useWebApp().initDataUnsafe.user?.id || '18844'
   !userId ? router.push('/change-port') : await configStore.init(userId)
   
   if(!configStore.isNewUser()){

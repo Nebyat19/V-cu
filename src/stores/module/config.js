@@ -61,19 +61,19 @@ const useConfigStore = defineStore('config', {
         console.log('user', this.user)
      
         } else {
-          
-          const { data, error } = await supabase.from('users').insert({
+          const newUser ={
             id: userId,
             username: userId,
             password: userId,
             isNew: false,
             isPremium: false,
             avator: 'male'
-          })
+          }
+          const {error } = await supabase.from('users').insert(newUser)
           if (error) {
             console.error( "Please try again")
           } else {
-            this.saveUserData(data[0])
+            this.saveUserData(newUser)
           
           }
         }
