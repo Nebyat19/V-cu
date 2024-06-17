@@ -1,57 +1,52 @@
-# mood-tracker
+# Vecu
 
-This template should help get you started developing with Vue 3 in Vite.
+![Vecu Logo](./src/assets/images/screenshoots/1.jpg)
 
-## Recommended IDE Setup
+Vecu (from the French word "vécu") is a web application built with Vue.js, Supabase, and Tailwind CSS. Vecu allows you to save your daily diary, events, and moods. Additionally, you can analyze and view statistics of your productivity. 
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Features
 
-## Customize configuration
+- Save daily diary entries
+- Track events and moods
+- View detailed analysis and statistics of your productivity
+- User-friendly interface with  intuitive screens
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Technologies Used
 
-## Project Setup
+- **Vue.js**: The progressive JavaScript framework
+- **Supabase**: The open-source Firebase alternative
+- **Tailwind CSS**: A utility-first CSS framework
 
-```sh
-npm install
-```
+## Screenshots
 
-### Compile and Hot-Reload for Development
+Here are some screenshots of the Vecu web app:
 
-```sh
-npm run dev
-```
 
-### Compile and Minify for Production
+### Start 
+![Events Screen](./src/assets/images/screenshoots/2.jpg)
 
-```sh
-npm run build
-```
+### Home 
+![home Screen](./src/assets/images/screenshoots/3.png)
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+### Profile 
+![Profile Screen](./src/assets/images/screenshoots/4.jpg)
 
-```sh
-npm run test:unit
-```
+### Calender 
+![Calender Screen](./src/assets/images/screenshoots/5.png)
 
-### Run End-to-End Tests with [Nightwatch](https://nightwatchjs.org/)
+### Calender 
+![Calender Screen](./src/assets/images/screenshoots/6.png)
 
-```sh
-# When using CI, the project must be built first.
-npm run build
+## Getting Started
 
-# Runs the end-to-end tests
-npm run test:e2e
-# Runs the tests only on Chrome
-npm run test:e2e -- --env chrome
-# Runs the tests of a specific file
-npm run test:e2e -- tests/e2e/example.js
-# Runs the tests in debug mode
-npm run test:e2e -- --debug
-```
-    
-### Lint with [ESLint](https://eslint.org/)
+Follow these instructions to get a copy of the project up and running on your local machine.
 
-```sh
-npm run lint
-```
+### Prerequisites
+
+Make sure you have the following installed:
+- Node.js
+- Vue CLI
+- Supabase account
+
+### Installation
+
