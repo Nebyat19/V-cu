@@ -52,7 +52,9 @@ import ButtonBack from '@/components/ui/ButtonBack.vue'
 import Swal from 'sweetalert2'
 import { computed, onMounted, ref } from 'vue'
 import { useMoodStore } from '@/stores/MoodStore.js'
+import { useConfigStore } from '@/stores/module/config'
 const moodStore = useMoodStore()
+const configStore = useConfigStore()
 const router = useRouter()
 const head = ref('')
 const text = ref('')
@@ -68,7 +70,7 @@ const saveEntry = () => {
     head: head.value,
     text: text.value,
    ...mood.value
-  })
+  },configStore.getUserId())
      head.value = ''
      text.value = ''
     

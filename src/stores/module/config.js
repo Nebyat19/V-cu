@@ -39,8 +39,13 @@ const useConfigStore = defineStore('config', {
       }
     }
     },
-    getUser() {
-        return this.user
+   async getUser() {
+    
+      //const { data } = await supabase.from('users').select().eq('id', this.userId)
+        return this.user 
+      },
+      getUserId() {
+        return this.user.id
       },
     saveUserData(user) {
       this.user = user
@@ -58,7 +63,7 @@ const useConfigStore = defineStore('config', {
         if (data.length) {
           this.saveUserData(data[0])
           this.isNew= false
-        console.log('user', this.user)
+        
      
         } else {
           const newUser ={
@@ -74,7 +79,7 @@ const useConfigStore = defineStore('config', {
             console.error( "Please try again")
           } else {
             this.saveUserData(newUser)
-          
+            this.isNew= true
           }
         }
       }

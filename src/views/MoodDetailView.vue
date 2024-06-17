@@ -2,7 +2,7 @@
   <div class="py-3 relative px-4 mx-auto h-screen bg-pageBackground">
 
     <ButtonBack />
-
+{{ mood.id }}
  
     <span v-if="Object.values(mood).length === 0" class="text-sm flex justify-center h-full items-center text-textLight text-center">
       <div class="flex flex-col items-center">

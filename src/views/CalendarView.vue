@@ -5,6 +5,7 @@
   >
     <ButtonBack />
     <H1>My Calendar</H1>
+
     <div class="flex justify-between mt-3">
       <div class="flex justify-start gap-1">
         <div class="relative">
@@ -85,7 +86,7 @@
         >
         <span
           class="text-2xl text-textLight w-10 h-10 grid place-content-center bg-gray-500 border border-opacity-90 border-gray-900 bg-opacity-30 rounded-xl"
-          >{{calendarDays[selectedDate+2]  || monthEmoji }}</span
+          >{{ calendarDays[selectedDate + 2] || monthEmoji }}</span
         >
       </div>
       <div class="mt-3 flex flex-col gap-2">
@@ -131,7 +132,7 @@ import DownIcon from '@/components/icons/DownIcon.vue'
 import UppIcon from '@/components/icons/UppIcon.vue'
 import RoundedCardContainer from '@/components/ui/RoundedCardContainer.vue'
 import IconNextArrow from '@/components/icons/IconNextArrow.vue'
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, ref, watchEffect } from 'vue'
 import setDragable from '@/utils/drag'
 import { monthNames } from '@/data/constants'
 import { useMoodStore } from '@/stores/MoodStore'
@@ -157,10 +158,10 @@ const changHeight = () => {
   scrollable.value.style.setProperty('--dynamic-height', `${h}`)
   upp.value = !upp.value
 }
-const openList=()=>{
-  h='29rem'
+const openList = () => {
+  h = '29rem'
   scrollable.value.style.setProperty('--dynamic-height', h)
-  upp.value=false
+  upp.value = false
 }
 const selectYear = (year) => {
   selectedYear.value = year
@@ -170,9 +171,18 @@ const selectMonth = (month) => {
   selectedMonth.value = month
   isMonthHidden.value = !isMonthHidden.value
 }
-const moods = computed(() => {
 
-  return moodStore.filtereByMonthYear({ year: selectedYear.value, month: selectedMonth.value })
+const moods = ref([])
+
+const fetchMoods = async () => {
+  const data = await moodStore.filtereByMonthYear({
+    year: selectedYear.value,
+    month: selectedMonth.value
+  })
+  moods.value = data
+}
+watchEffect(() => {
+  fetchMoods()
 })
 
 onMounted(() => {
@@ -182,29 +192,20 @@ const filteredMoods = computed(() => {
   return moods.value.filter((mood) => mood.date == selectedDate.value)
 })
 
-const calendarDays = computed(() => { //calendarDays
+const calendarDays = computed(() => {
+  const daysInMonth = 30
+  const daysArray = Array(daysInMonth)
+    .fill()
+    .map((_, index) => index + 1)
 
-      const daysInMonth = 30; // You can adjust this based on the month
-      const daysArray = Array(daysInMonth).fill().map((_, index) => index + 1);
+  const moodMap = new Map()
 
-      const moodMap = new Map();
+  moods.value.forEach((mood) => {
+    if (!moodMap.has(mood.date)) {
+      moodMap.set(mood.date, mood.emoji)
+    }
+  })
 
-      moods.value.forEach(mood => {
-        if (!moodMap.has(mood.date)) {
-          moodMap.set(mood.date, mood.emoji);
-        }
-      });
-
-
-    return [
-
-
-    '',
-    '',
-    '',
-    ...daysArray.map(day => moodMap.get(day) || day),
-    '',
-    ''
-  ]
+  return ['', '', '', ...daysArray.map((day) => moodMap.get((day + ' ').trim()) || day), '', '']
 })
 </script>

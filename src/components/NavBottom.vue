@@ -4,7 +4,7 @@
       <router-link to="memo">
         <IconCalander />
       </router-link>
-      <router-link to="stats"><BarchartIcon/></router-link>
+    <!------ <router-link to="stats"><BarchartIcon/></router-link>----> 
       <router-link to="user/profile"><IconUser /></router-link>
 
       <router-link class="bg-white rounded-xl p-2" to="/"><IconHome /> </router-link>

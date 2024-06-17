@@ -4,7 +4,7 @@
       <div class="flex flex-col justify-center items-center h-full">
 <ErrorIcon/>
 <h2>Change To Telegram</h2>
-<VButton padding="2" rounded="roundedLg" class="mt-5" ><a   href="https://t.me/">Telegram</a> </VButton>
+<VButton padding="2" rounded="roundedLg" class="mt-5" ><a   href="https://t.me/vecu_mood_bot">Telegram</a> </VButton>
 
       </div>
     </div>

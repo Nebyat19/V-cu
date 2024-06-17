@@ -23,17 +23,25 @@ import NavHeader from '@/components/NavHeader.vue'
 import NavBottom from '@/components/NavBottom.vue'
 import MoodRecentList from '@/components/ui/MoodRecentList.vue'
 import { getGreeting } from '@/utils/getGreeting'
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref, watch, watchEffect } from 'vue'
 import { useMoodStore } from '@/stores/MoodStore'
 import ErrorIcon from '@/components/icons/ErrorIcon.vue'
+import { useConfigStore } from '@/stores/module/config'
 const greeting = getGreeting()
 const moodStore = useMoodStore()
 const searchKey = ref('')
-
-const AllrecentMoods = computed(() => {
-  if (searchKey.value) return moodStore.searchByTerm(searchKey.value) || []
-  else return moodStore.getRecentMoods
+const configStore = useConfigStore()
+const AllrecentMoods = ref([])
+watch(searchKey, async (key) => {
+  if (key.length > 0) {
+    AllrecentMoods.value = await moodStore.searchByTerm(key, configStore.getUserId())
+  } else {
+    AllrecentMoods.value = moodStore.getRecentMoods
+  }
 })
 
+onMounted(() => {
+  AllrecentMoods.value =  moodStore.getRecentMoods
+})
 const setSearchKey = (key) => (searchKey.value = key)
 </script>
