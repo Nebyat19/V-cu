@@ -48,5 +48,4 @@ Make sure you have the following installed:
 - Vue CLI
 - Supabase account
 
-### Installation
 
