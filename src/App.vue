@@ -18,7 +18,7 @@ const configStore = useConfigStore()
 const router = useRouter()
 
 onBeforeMount(async () => {
-  const userId = useWebApp().initDataUnsafe.user?.id || 78900000
+  const userId = useWebApp().initDataUnsafe.user?.id || 123450
   console.log(userId)
 
   if (!userId) {

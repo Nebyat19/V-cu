@@ -1,15 +1,15 @@
 <template>
   <data class="absolute flex gap-3 bottom-2 left-1/2 -translate-x-1/2">
     <VButton rounded="rouded" padding="1" bg="bgGradient2">
-      <router-link to="memo">
+      <router-link class="hover:scale-x-110"  to="memo">
         <IconCalander />
       </router-link>
     <!------ <router-link to="stats"><BarchartIcon/></router-link>----> 
-      <router-link to="user/profile"><IconUser /></router-link>
+      <router-link class="hover:scale-x-110"  to="user/profile"><IconUser /></router-link>
 
       <router-link class="bg-white rounded-xl p-2" to="/"><IconHome /> </router-link>
     </VButton>
-    <router-link to="add">
+    <router-link  class="hover:scale-x-110" to="add">
       <VButton rounded="rouded" padding="4" bg="bgGradient2">
         <IconPlus />
       </VButton>

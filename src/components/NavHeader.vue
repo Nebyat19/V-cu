@@ -17,7 +17,7 @@
         <img class="w-6 h-6" :src="ICON_SEARCH" alt="" />
         <span class=""></span>
       </li>
-      <li class="relative">
+      <li class="relative hover:scale-110">
         <span @click="isShowList=!isShowList"><IconBars3 /> </span>
         <div v-show="isShowList"
           class="cursor-pointer items-start absolute -left-20 bg-white pr-7 px-3 py-2 flex flex-col gap-3"
@@ -75,7 +75,7 @@ import { useConfigStore } from '@/stores/module/config'
 const searchTerm = ref('')
 const isShowList = ref(false)
 const props = defineProps(['setSearchKey'])
-const profile = computed(()=>useConfigStore().getUser())
+const profile = computed(()=>useConfigStore().user)
 const updatesearchKey = ((timeout = 500) => {
   let timer
   return () => {

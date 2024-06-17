@@ -93,13 +93,13 @@
 <script setup>
 import ButtonBack from '@/components/ui/ButtonBack.vue'
 import { AVATOR_FEMALE, AVATOR_MALE } from '@/data/constants'
-import { computed, onBeforeMount, ref, watch } from 'vue'
+import { computed, onBeforeMount, onMounted, ref, watch } from 'vue'
 import VButton from '@/components/ui/VButton.vue'
 import { useConfigStore } from '@/stores/module/config'
 import CheckIcon from '@/components/icons/CheckIcon.vue'
 import { useRouter } from 'vue-router'
 const configStore = useConfigStore()
-const Profile = computed(()=>configStore.getUser())
+const Profile = computed(()=>configStore.user)
 const updateProfile = ref({
   username: Profile.value.username,
   password: Profile.value.password,
@@ -134,10 +134,10 @@ const handleSubmit = async () => {
   }
 }
 
-onBeforeMount(() => {
- /* if(!Profile.value.id){
+onMounted(() => {
+  if(!Profile.value.id){
     useRouter().push('/change-port')
   }
- */
+ 
 })
 </script>

@@ -17,7 +17,7 @@
         >{{ catagory.name }}</VButton
       >
     </div>
-    <div class="flex justify-end mr-5 mt-5">
+    <div class="flex justify-end mr-5 mt-5 hover:scale-105">
       <VButton @click="goNextPage" rounded="roundedLg" padding="2" bg="bgGradient"
         >Next <IconNext
       /></VButton>
