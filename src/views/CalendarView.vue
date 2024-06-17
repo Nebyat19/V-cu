@@ -52,7 +52,8 @@
     </div>
 
     <div class="bg-white p-3 grid grid-cols-7 mt-3 shadow-sm rounded-[20px]">
-      <template v-for="(date, ind) in calendarDays" :key="date">
+      <span class="grid place-items-center mt-5" v-if="isLoaded"><img :src="LOADER_GIF" alt="" srcset=""></span>
+      <template  v-else v-for="(date, ind) in calendarDays" :key="date">
         <DateNumber
           @click="
             () => {
@@ -134,15 +135,16 @@ import RoundedCardContainer from '@/components/ui/RoundedCardContainer.vue'
 import IconNextArrow from '@/components/icons/IconNextArrow.vue'
 import { computed, onMounted, ref, watchEffect } from 'vue'
 import setDragable from '@/utils/drag'
-import { monthNames } from '@/data/constants'
+import { monthNames,LOADER_GIF } from '@/data/constants'
 import { useMoodStore } from '@/stores/MoodStore'
+import { useConfigStore } from '@/stores/module/config'
 const moodStore = useMoodStore()
 
 const selectedMonth = ref('June')
 const selectedDate = ref('8')
 const monthEmoji = ref('😊')
 const selectedYear = ref(new Date().getFullYear())
-
+const configStore = useConfigStore()
 const isMonthHidden = ref(true)
 const isYearHidden = ref(true)
 const scrollable = ref(null)
@@ -173,11 +175,12 @@ const selectMonth = (month) => {
 }
 
 const moods = ref([])
-
+const isLoaded = computed(()=> moodStore.isLoading)
 const fetchMoods = async () => {
   const data = await moodStore.filtereByMonthYear({
     year: selectedYear.value,
-    month: selectedMonth.value
+    month: selectedMonth.value,
+    userId: configStore.getUserId()
   })
   moods.value = data
 }

@@ -1,6 +1,5 @@
 <template>
   <app-container>
-    {{ telegramId }}
     <router-view></router-view>
   </app-container>
   <tg-alert message="Hello!" />
@@ -19,14 +18,19 @@ const configStore = useConfigStore()
 const router = useRouter()
 
 onBeforeMount(async () => {
-  const userId = useWebApp().initDataUnsafe.user?.id || 456
-  !userId ? router.push('/change-port') : await configStore.init(userId)
-  const isNew = configStore.isNewUser()
-  if (!isNew) {
-    await moodStore.fetchMoods(userId)
-    router.push('/home')
+  const userId = useWebApp().initDataUnsafe.user?.id || 78900000
+  console.log(userId)
+
+  if (!userId) {
+    router.push('/change-port')
   } else {
-    router.push('/')
+    await configStore.init(userId)
+    const isNew = configStore.isNewUser()
+  
+    if (!isNew) {
+      await moodStore.fetchMoods(userId)
+      router.push('/home')
+    } 
   }
 })
 </script>

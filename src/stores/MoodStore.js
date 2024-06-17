@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { supabase } from '@/libs/supabase.js'
+import { CodeSquare } from 'lucide-vue-next'
 
 const useMoodStore = defineStore('MoodStore', {
   state: () => ({
@@ -27,7 +28,7 @@ const useMoodStore = defineStore('MoodStore', {
   }),
   getters: {
     isLoaded(state) {
-      return state.moods.length > 0
+      return state.isLoading
     },
     getMood(state) {
       return state.mood
@@ -71,43 +72,48 @@ const useMoodStore = defineStore('MoodStore', {
           data[i].about = aboutObject.about
         })
 
-        this.moods = data
-        this.isLoading = false
+        this.moods = data || []
       }
+      this.isLoading = false
+      console.log('done')
     },
     recordMood(mood) {
       this.mood = mood
     },
     async addMood(mood, userId) {
-      let id = await getLastInsertedMoodId(userId)
-      this.moods.unshift({ ...mood, id: id + 1 })
       let aboutObject = {
         about: mood.about
       }
       mood.about = JSON.stringify(aboutObject)
-      const { data, error } = await supabase.from('moods').insert({ ...mood, userid: userId })
+      const { data, error } = await supabase
+        .from('moods')
+        .insert({ ...mood, userid: userId })
+        .select()
       this.mood = {}
       if (error) {
-        ;(this.error = true), this.moods.pop()
+        this.error = true
+      } else {
+        mood.about = aboutObject.about
+        this.moods.unshift({ ...mood, id: data[0].id })
       }
-      console.log('data', data)
     },
 
-    async filtereByMonthYear({ year, month }) {
+    async filtereByMonthYear({ year, month,userId }) {
+      this.isLoading = true
       const { data, error } = await supabase
         .from('moods')
         .select()
+        .eq('userid', userId)
         .eq('year', year)
         .eq('month', month)
 
       if (error) {
         this.error = true
-        return []
       }
 
       this.FetchedMoods = data
-
-      return data
+      this.isLoading = false
+      return data || []
     },
 
     async removeMood(id) {

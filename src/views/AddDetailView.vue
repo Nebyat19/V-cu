@@ -64,9 +64,9 @@ onMounted(() => {
     router.push('/home')
   }
 })
-const saveEntry = () => {
+const saveEntry =async () => {
    
-  moodStore.addMood({
+ await moodStore.addMood({
     head: head.value,
     text: text.value,
    ...mood.value
@@ -76,7 +76,7 @@ const saveEntry = () => {
     
 
 }
-const submitEntry = () => {
+const submitEntry = async () => {
   if (head.value == '' || text.value == '') {
     Swal.fire({
       toast: true,
@@ -93,7 +93,7 @@ const submitEntry = () => {
     })
     return
   }
-  saveEntry()
+ await saveEntry()
 
   Swal.fire({
     toast: true,

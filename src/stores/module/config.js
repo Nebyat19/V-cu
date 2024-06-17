@@ -17,8 +17,12 @@ const useConfigStore = defineStore('config', {
     getConfig(state) {
       return state.config
     },
+    isLoaded(state){
+      return state.userId!==null
+    }
    
   },
+  
   actions: {
     async updateUser(profile) {
       

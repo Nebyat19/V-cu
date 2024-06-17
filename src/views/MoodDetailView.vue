@@ -9,7 +9,7 @@
  <ErrorIcon />
 
 No Mood found
-<VButton bg="bgOutline" @click="router.push('/')" class="mt-1" padding="1">Go Home</VButton>
+<VButton bg="bgOutline" @click="router.push('/home')" class="mt-1" padding="1">Go Home</VButton>
 
 </div>
 

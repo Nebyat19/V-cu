@@ -5,7 +5,8 @@
     <h3 class="text-textLight tracking-wide leading-6 text-sm mt-3">
       Don't let a bad day make you feel like you have a bad life
     </h3>
-    <div v-if="AllrecentMoods.length == 0" class="mt-5 w-full grid place-items-center">
+    <span class="grid place-items-center mt-5" v-if="isLoaded"><img :src="LOADER_GIF" alt="" srcset=""></span>
+    <div v-else-if="AllrecentMoods.length == 0" class="mt-5 w-full grid place-items-center">
       <h3 class="text-textLight grid place-items-center text-sm">
         <ErrorIcon />
         No moods
@@ -27,6 +28,7 @@ import { computed, onMounted, ref, watch, watchEffect } from 'vue'
 import { useMoodStore } from '@/stores/MoodStore'
 import ErrorIcon from '@/components/icons/ErrorIcon.vue'
 import { useConfigStore } from '@/stores/module/config'
+import {LOADER_GIF} from '@/data/constants'
 const greeting = getGreeting()
 const moodStore = useMoodStore()
 const searchKey = ref('')
@@ -40,6 +42,7 @@ watch(searchKey, async (key) => {
   }
 })
 
+const isLoaded = computed(()=> moodStore.isLoading)
 onMounted(() => {
   AllrecentMoods.value =  moodStore.getRecentMoods
 })
