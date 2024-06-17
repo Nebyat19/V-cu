@@ -37,13 +37,13 @@
         >
       </div>
 
-      <VButton @click="submitEntry" padding="3" bg="bgWhite">save</VButton>
+      <VButton v-show="!isSaving" @click="submitEntry" padding="3" bg="bgWhite">save</VButton>
     </div>
   </div>
 </template>
 
 <script setup>
-import { useRoute, useRouter } from 'vue-router'
+import {  useRouter } from 'vue-router'
 import IconSave from '@/components/icons/IconSave.vue'
 import VButton from '@/components/ui/VButton.vue'
 import RoundedCardContainer from '@/components/ui/RoundedCardContainer.vue'
@@ -59,13 +59,15 @@ const router = useRouter()
 const head = ref('')
 const text = ref('')
 const mood = computed(() => moodStore.getMood)
+const isSaving = ref(false)
+
 onMounted(() => {
   if(!mood.value){
     router.push('/home')
   }
 })
 const saveEntry =async () => {
-   
+  isSaving.value=true
  await moodStore.addMood({
     head: head.value,
     text: text.value,
@@ -73,6 +75,7 @@ const saveEntry =async () => {
   },configStore.getUserId())
      head.value = ''
      text.value = ''
+     isSaving.value=false
     
 
 }
