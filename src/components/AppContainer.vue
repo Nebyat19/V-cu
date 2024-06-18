@@ -9,17 +9,18 @@
 <script setup>
 import { useConfigStore } from '@/stores/module/config'
 import { onMounted, ref } from 'vue'
-import { useTelegram } from 'vue-tg'
+import { useWebApp } from 'vue-tg'
 
 
 const username = ref('')
-const { initData } = useTelegram()
+const { initDataUnsafe } = useWebApp()
 const configStore = useConfigStore()
 
 onMounted(() => {
-  const user = initData?.user
+  const user = initDataUnsafe?.user
+  
   if (user) {
-    username.value =  user.username || user.first_name || ""
+    username.value =  user.username || user.first_name || "no"
     configStore.setUsername(username.value)
    
   }
