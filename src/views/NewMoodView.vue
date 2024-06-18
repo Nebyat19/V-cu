@@ -1,7 +1,7 @@
 <template>
   <div class="py-3 px-4 scrollbar-hidden h-screen bg-[#fcfbfa]">
     <ButtonBack />
-    <H1>Dear Xhetu!</H1>
+    <H1>{{ username }}</H1>
     <h4 class="text-xs mt-1 text-slate-800">How was your day?</h4>
 
     <MoodList :MOOD_TYPES :setMood />
@@ -37,11 +37,14 @@ import { useMoodStore } from '@/stores/MoodStore.js'
 import { useRouter } from 'vue-router'
 import { formatDate } from '@/utils/formatDate.js'
 import Swal from 'sweetalert2'
+import { useConfigStore } from '@/stores/module/config'
 
 const selectedCatagory = ref([])
 const selectedMood = ref({})
 const router = useRouter()
 const mood = ref({})
+const configStore = useConfigStore()
+const username = configStore.getUsername 
 const moodStore = useMoodStore()
 const setMood = (selected, newmood) => {
   selectedMood.value = selected.value

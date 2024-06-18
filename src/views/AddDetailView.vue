@@ -73,7 +73,7 @@ const saveEntry =async () => {
     text: text.value,
    ...mood.value
   },configStore.getUserId())
-     head.value = ''
+     head.value = '' 
      text.value = ''
      isSaving.value=false
     

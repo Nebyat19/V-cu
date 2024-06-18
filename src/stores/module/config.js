@@ -5,6 +5,7 @@ import { useRouter } from 'vue-router'
 const useConfigStore = defineStore('config', {
   state: () => ({
     userId: null,
+    username:'',
     user: {},
     isNew: true,
     config: {
@@ -14,16 +15,23 @@ const useConfigStore = defineStore('config', {
   }),
 
   getters: {
+
     getConfig(state) {
       return state.config
     },
     isLoaded(state){
       return state.userId!==null
+    },
+    getUsername(state){
+      return state.username
     }
    
   },
   
   actions: {
+    setUsername(username){
+      this.username=username
+    },
     async updateUser(profile) {
       
     const { data, error } = await supabase.from('users').select().eq('username', profile.username)
