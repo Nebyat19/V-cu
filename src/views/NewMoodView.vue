@@ -1,7 +1,7 @@
 <template>
   <div class="py-3 px-4 scrollbar-hidden h-screen bg-[#fcfbfa]">
     <ButtonBack />
-    <H1>{{ username }}</H1>
+  <div class="flex gap-1">  <H1>Dear</H1> <h3 class="text-lg text-black">{{ username }}</h3></div>
     <h4 class="text-xs mt-1 text-slate-800">How was your day?</h4>
 
     <MoodList :MOOD_TYPES :setMood />
